@@ -47,9 +47,25 @@ namespace Navigator
 
         }
 
-        public void SetNode(int posX, int posY)
+        public void ClearRoads()
         {
+            _Window.MapCanvas.Children.Clear();
+        }
 
+        public void SetNode(Point ClickPosition)
+        {
+            Ellipse ellipse = new Ellipse();
+
+            ellipse.Width = 10;
+            ellipse.Height = 10;
+
+            SolidColorBrush brush = new SolidColorBrush((Color)ColorConverter.ConvertFromString(_RoadColor[_RealRoadType]));
+            ellipse.Fill = brush;
+
+            Canvas.SetLeft(ellipse, ClickPosition.X - ellipse.Width / 2);
+            Canvas.SetTop(ellipse, ClickPosition.Y - ellipse.Height / 2);
+
+            _Window.MapCanvas.Children.Add(ellipse);
         }
 
         public void SetRoadType(RoadType TYPE) {

@@ -31,6 +31,7 @@ namespace Navigator
             DrawTrainRoadButton.Click += events.RoadButtonClick_Event;
             DrawWalkerRoadButton.Click += events.RoadButtonClick_Event;
             Map.MouseLeftButtonDown += events.MapClick_Event;
+            ClearRoadsButton.Click += events.ClearRoadButton_Event;
         }
 
     }

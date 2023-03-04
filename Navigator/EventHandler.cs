@@ -62,7 +62,13 @@ namespace Navigator
 
         public void MapClick_Event(object sender, MouseButtonEventArgs e)
         {
+            Point point = e.GetPosition(_Window.MapCanvas);
+            _DrawRoadClass.SetNode(point);
+        }
 
+        public void ClearRoadButton_Event(object sender, RoutedEventArgs e)
+        {
+            _DrawRoadClass.ClearRoads();
         }
     }
 }
